@@ -1,8 +1,7 @@
 package frc.constants;
 
 /**
- * The FieldConstants maps field constants (such as dimensions and distances) to
- * a variable name.
+ * All constants that are on the playing field (example: dimensions of field)
  */
 public abstract class FieldConstants {
 

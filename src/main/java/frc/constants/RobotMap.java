@@ -1,5 +1,8 @@
 package frc.constants;
 
+/**
+ * Map of hardware components IDs
+ */
 public abstract class RobotMap {
     public CAN can = new CAN();
     public PCM pcm = new PCM();

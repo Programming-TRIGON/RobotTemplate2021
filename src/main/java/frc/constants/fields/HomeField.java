@@ -3,7 +3,7 @@ package frc.constants.fields;
 import frc.constants.FieldConstants;
 
 /**
- * Home field dimensions and distances.
+ * Instantiates field constants
  */
 public class HomeField extends FieldConstants {
     public HomeField() {
