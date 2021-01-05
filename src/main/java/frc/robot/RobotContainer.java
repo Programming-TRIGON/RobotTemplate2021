@@ -14,4 +14,11 @@ public class RobotContainer {
         robotConstants = new RobotA();
         fieldConstants = new HomeField();
     }
+
+    /**
+     * initializes all commands
+     */
+    public void initializeCommands() {
+
+    }
 }
