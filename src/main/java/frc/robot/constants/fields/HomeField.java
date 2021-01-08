@@ -1,6 +1,7 @@
-package frc.constants.fields;
+package frc.robot.constants.fields;
 
-import frc.constants.FieldConstants;
+import frc.robot.constants.FieldConstants;
+import frc.robot.constants.fields.HomeField;
 
 /**
  * Instantiates field constants
