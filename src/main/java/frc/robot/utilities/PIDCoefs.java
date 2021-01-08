@@ -1,4 +1,4 @@
-package frc.utilities;
+package frc.robot.utilities;
 
 /**
  * This class is used to store settings for different PIDs

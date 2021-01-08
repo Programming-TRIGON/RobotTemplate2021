@@ -1,4 +1,4 @@
-package frc.constants;
+package frc.robot.constants;
 
 /**
  * All the constants to be uses for the robot

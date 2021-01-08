@@ -1,6 +1,6 @@
-package frc.constants.robots;
+package frc.robot.constants.robots;
 
-import frc.constants.RobotConstants;
+import frc.robot.constants.RobotConstants;
 
 /**
  * instantiates the robot constants

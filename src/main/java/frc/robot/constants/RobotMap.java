@@ -1,4 +1,4 @@
-package frc.constants;
+package frc.robot.constants;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into

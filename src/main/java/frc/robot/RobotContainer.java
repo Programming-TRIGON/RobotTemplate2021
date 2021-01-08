@@ -1,7 +1,7 @@
 package frc.robot;
 
-import frc.constants.fields.HomeField;
-import frc.constants.robots.RobotA;
+import frc.robot.constants.fields.HomeField;
+import frc.robot.constants.robots.RobotA;
 
 public class RobotContainer {
     private RobotA robotConstants;
