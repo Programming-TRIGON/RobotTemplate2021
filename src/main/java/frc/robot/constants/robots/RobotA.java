@@ -9,6 +9,7 @@ public class RobotA extends RobotConstants {
 
     // TODO: Set Constants
     public RobotA() {
-
+        /* Robot Map */
+        pwm.LED_CONTROLLER = 0;
     }
 }

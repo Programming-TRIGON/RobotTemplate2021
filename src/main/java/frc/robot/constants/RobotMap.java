@@ -27,6 +27,6 @@ public abstract class RobotMap {
     }
 
     public class PWM {
-
+        public int LED_CONTROLLER;
     }
 }
