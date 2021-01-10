@@ -13,6 +13,7 @@ public abstract class RobotConstants extends RobotMap {
         public double LIMELIGHT_ANGLE_OFFSET;
         public double LIMELIGHT_OFFSET_X;
         public double LIMELIGHT_OFFSET_Y;
+        public String DEFAULT_TABLE_KEY;
     }
 
 }

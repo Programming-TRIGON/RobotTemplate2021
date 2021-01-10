@@ -16,5 +16,6 @@ public class RobotA extends RobotConstants {
         limelightConstants.LIMELIGHT_ANGLE_OFFSET = 1;
         limelightConstants.LIMELIGHT_OFFSET_X = 1;
         limelightConstants.LIMELIGHT_OFFSET_Y = 1;
+        limelightConstants.DEFAULT_TABLE_KEY = "limelight";
     }
 }

@@ -8,15 +8,14 @@ import frc.robot.constants.robots.RobotA;
 
 public class Limelight {
 
-    public static final String DEFAULT_TABLE_KEY = "limelight";
     private final NetworkTableEntry tv, tx, ty, ta, ts, ledMode, camMode, pipeline, snapshot;
-    private RobotA robotConstants;
+    private RobotA constants;
 
     /**
      * @param tableKey the key of the limelight - if it was changed.
      */
-    public Limelight(String tableKey) {
-        robotConstants = new RobotA();
+    public Limelight(String tableKey, RobotA constants) {
+        this.constants = constants;
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
         NetworkTable limelightTable = inst.getTable(tableKey);
         tv = limelightTable.getEntry("tv");
@@ -30,8 +29,9 @@ public class Limelight {
         snapshot = limelightTable.getEntry("snapshot");
     }
 
-    public Limelight() {
-        this(DEFAULT_TABLE_KEY);
+    public Limelight(RobotA constants) {
+        this(constants.limelightConstants.DEFAULT_TABLE_KEY, constants);
+        this.constants = constants;
     }
 
     /**
@@ -75,9 +75,9 @@ public class Limelight {
     // TODO: set real function
     public double getDistanceFromLimelight() {
         double x = getTy();
-        return robotConstants.limelightConstants.DISTANCE_CALCULATION_A_COEFFICIENT * Math.pow(x, 2)
-                + robotConstants.limelightConstants.DISTANCE_CALCULATION_B_COEFFICIENT * x
-                + robotConstants.limelightConstants.DISTANCE_CALCULATION_C_COEFFICIENT;
+        return constants.limelightConstants.DISTANCE_CALCULATION_A_COEFFICIENT * Math.pow(x, 2)
+                + constants.limelightConstants.DISTANCE_CALCULATION_B_COEFFICIENT * x
+                + constants.limelightConstants.DISTANCE_CALCULATION_C_COEFFICIENT;
     }
 
     /**
@@ -201,10 +201,10 @@ public class Limelight {
     private Vector2d calculateVector() {
         // This is the vector from the limelight to the target.
         Vector2d limelightToTarget = new Vector2d(getDistanceFromLimelight(), 0);
-        limelightToTarget.rotate(getTx() + robotConstants.visionConstants.LIMELIGHT_ANGLE_OFFSET);
+        limelightToTarget.rotate(getTx() + constants.limelightConstants.LIMELIGHT_ANGLE_OFFSET);
         // The offset is subtracted from the limelightToTarget vector in order to get
         // the final vector.
-        return new Vector2d(limelightToTarget.x - robotConstants.visionConstants.LIMELIGHT_OFFSET_X,
-                limelightToTarget.y - robotConstants.visionConstants.LIMELIGHT_OFFSET_Y);
+        return new Vector2d(limelightToTarget.x - constants.limelightConstants.LIMELIGHT_OFFSET_X,
+                limelightToTarget.y - constants.limelightConstants.LIMELIGHT_OFFSET_Y);
     }
 }
