@@ -11,13 +11,6 @@ public class TrigonSolenoid extends DoubleSolenoid {
         super(forwardChannel, reverseChannel);
     }
 
-    /**
-     * @param state pushes the solenoid forward if true else it pulls it
-     */
-    public void set(boolean state) {
-        set(state ? Value.kForward : Value.kReverse);
-    }
-
     public boolean isOn() {
         return get() != Value.kOff;
     }
