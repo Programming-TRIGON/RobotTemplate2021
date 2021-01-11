@@ -1,4 +1,4 @@
-package frc.robot.componants;
+package frc.robot.components;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.sensors.PigeonIMU;
