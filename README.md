@@ -47,4 +47,4 @@ The code is written in Java and is based of WPILib Java control system.
 - [`frc.robot.vision`](src/main/java/frc/robot/vision)
 
     Contains various classes that help with tracking and following vision targets using limelight 2.
-![logo](images/TrigonLogo.png)
+![logo](https://github.com/Programming-TRIGON/RobotCode2020/blob/master/images/TrigonLogo.png)
