@@ -1,6 +1,7 @@
 package frc.robot.constants.robots;
 
 import frc.robot.constants.RobotConstants;
+import frc.robot.utilities.PIDCoefs;
 
 /**
  * instantiates the robot constants
@@ -17,5 +18,9 @@ public class RobotA extends RobotConstants {
         limelightConstants.LIMELIGHT_OFFSET_X = 1;
         limelightConstants.LIMELIGHT_OFFSET_Y = 1;
         limelightConstants.DEFAULT_TABLE_KEY = "limelight";
+
+        // Vision Constants
+        visionConstants.VISION_ROTATION_SETTINGS = new PIDCoefs(0, 0, 0, 0, 0);
+        visionConstants.TARGET_NOT_FOUND_WAIT_TIME = 0.1;
     }
 }
