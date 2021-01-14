@@ -6,6 +6,7 @@ import frc.robot.vision.Limelight;
 import frc.robot.subsystems.MovableSubsystem;
 import frc.robot.vision.Target;
 import edu.wpi.first.wpilibj.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.utilities.PIDCoefs;
 import edu.wpi.first.wpilibj.Timer;
 
@@ -67,5 +68,9 @@ public class GenericTurnToTargetCMD extends CommandBase {
   public boolean isFinished() {
     return ((Timer.getFPGATimestamp() - lastTimeSeenTarget) > constants.visionConstants.TARGET_NOT_FOUND_WAIT_TIME)
         || rotationPIDController.atSetpoint();
+  }
+
+  public void enableTuning() {
+    SmartDashboard.putData("PID/visionRotation", rotationPIDController);
   }
 }
