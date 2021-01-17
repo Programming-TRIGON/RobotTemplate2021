@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Notifier;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.constants.robots.RobotA;
+import frc.robot.constants.RobotConstants;
 
 public class LED extends SubsystemBase {
   private static final double BLINK_TIME = 0.2;
@@ -22,7 +22,7 @@ public class LED extends SubsystemBase {
    * Creates a new LED subsystem for Rev robotics Led controller and color
    * changing.
    */
-  public LED(RobotA constants) {
+  public LED(RobotConstants constants) {
     ledController = new Spark(constants.pwm.LED_CONTROLLER);
     currentColor = LEDColor.Off;
     blinkingAmount = -1;
