@@ -32,7 +32,7 @@ public class GenericTurnToTargetCMD extends CommandBase {
     this.target = target;
     this.subsystem = subsystem;
 
-    PIDCoefs rotationSettings = constants.visionConstants.VISION_ROTATION_SETTINGS;
+    PIDCoefs rotationSettings = constants.visionConstants.ROTATION_SETTINGS;
     rotationPIDController = new PIDController(rotationSettings.getKP(), rotationSettings.getKI(),
         rotationSettings.getKD());
     rotationPIDController.setTolerance(rotationSettings.getTolerance(), rotationSettings.getDeltaTolerance());
@@ -66,7 +66,7 @@ public class GenericTurnToTargetCMD extends CommandBase {
 
   @Override
   public boolean isFinished() {
-    return ((Timer.getFPGATimestamp() - lastTimeSeenTarget) > constants.visionConstants.TARGET_NOT_FOUND_WAIT_TIME)
+    return ((Timer.getFPGATimestamp() - lastTimeSeenTarget) > constants.visionConstants.TARGET_TIME_OUT)
         || rotationPIDController.atSetpoint();
   }
 

@@ -20,8 +20,8 @@ public abstract class RobotConstants extends RobotMap {
     }
 
     public static class VisionConstants {
-        public PIDCoefs VISION_ROTATION_SETTINGS;
-        public double TARGET_NOT_FOUND_WAIT_TIME;
+        public PIDCoefs ROTATION_SETTINGS;
+        public double TARGET_TIME_OUT;
     }
 
 }

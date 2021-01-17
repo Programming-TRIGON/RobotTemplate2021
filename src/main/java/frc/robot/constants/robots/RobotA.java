@@ -20,7 +20,7 @@ public class RobotA extends RobotConstants {
         limelightConstants.DEFAULT_TABLE_KEY = "limelight";
 
         // Vision Constants
-        visionConstants.VISION_ROTATION_SETTINGS = new PIDCoefs(0, 0, 0, 0, 0);
-        visionConstants.TARGET_NOT_FOUND_WAIT_TIME = 0.1;
+        visionConstants.ROTATION_SETTINGS = new PIDCoefs(0, 0, 0, 0, 0);
+        visionConstants.TARGET_TIME_OUT = 0.1;
     }
 }
