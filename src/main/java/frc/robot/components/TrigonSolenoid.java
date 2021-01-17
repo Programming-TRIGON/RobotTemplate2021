@@ -11,6 +11,19 @@ public class TrigonSolenoid extends DoubleSolenoid {
         super(forwardChannel, reverseChannel);
     }
 
+    /**
+     * Sets state of solenoid with a boolean
+     * 
+     * @param state true=forward false=reverse
+     */
+    public void setSolenoid(boolean state) {
+        if (state) {
+            set(Value.kForward);
+        } else {
+            set(Value.kReverse);
+        }
+    }
+
     public boolean isOn() {
         return get() != Value.kOff;
     }
