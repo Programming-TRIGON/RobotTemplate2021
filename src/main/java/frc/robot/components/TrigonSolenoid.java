@@ -27,8 +27,12 @@ public class TrigonSolenoid extends DoubleSolenoid {
         return get() != Value.kOff;
     }
 
-    public boolean isPushed() {
+    public boolean isForward() {
         return get() == Value.kForward;
+    }
+
+    public boolean isReversed() {
+        return get() == Value.kReverse;
     }
 
     public void off() {
