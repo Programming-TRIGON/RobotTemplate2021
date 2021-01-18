@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  * solenoid class
  */
 public class TrigonSolenoid extends DoubleSolenoid {
-    public TrigonSolenoid(final int forwardChannel, final int reverseChannel) {
+    public TrigonSolenoid(int forwardChannel, int reverseChannel) {
         super(forwardChannel, reverseChannel);
     }
 
