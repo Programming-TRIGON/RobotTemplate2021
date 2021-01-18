@@ -9,6 +9,10 @@ public class RobotA extends RobotConstants {
 
     // TODO: Set Constants
     public RobotA() {
+      
+        /* Robot Map */
+        pwm.LED_CONTROLLER = 0;
+      
         // Limelight Constants
         limelightConstants.DISTANCE_CALCULATION_A_COEFFICIENT = 1;
         limelightConstants.DISTANCE_CALCULATION_B_COEFFICIENT = 1;
