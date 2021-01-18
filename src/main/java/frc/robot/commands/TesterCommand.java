@@ -3,6 +3,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.constants.RobotConstants;
 import frc.robot.subsystems.TestableSubsystem;
 
 import java.util.HashMap;
@@ -11,13 +12,11 @@ import java.util.HashMap;
 public class TesterCommand extends CommandBase {
 
 	HashMap<String, TestableSubsystem> subsystems;
-	HashMap<String, String> initialValues;
+	HashMap<String, double[]> initialValues;
 	double initialTime;
-	final int SECONDS_TO_WAIT = 2;
-	final double MOVE_POWER = 1;
-	boolean isFinished = false;
+	RobotConstants.TesterConstants constants;
 
-	public TesterCommand() {
+	public TesterCommand(RobotConstants.TesterConstants constants) {
 		subsystems = new HashMap();
 		initialValues = new HashMap<>();
 	}
@@ -33,36 +32,31 @@ public class TesterCommand extends CommandBase {
 		for(String name : subsystems.keySet()){
 			TestableSubsystem ss = subsystems.get(name);
 			initialValues.put(name, ss.getValues());
-			ss.move(MOVE_POWER);
+			ss.move(constants.MOVE_POWER);
 		}
 		initialTime = Timer.getFPGATimestamp();
-
-	}
-
-	@Override
-	public void execute() {
-		if (Timer.getFPGATimestamp() < initialTime + SECONDS_TO_WAIT)
-			return;
-
-		StringBuilder msg = new StringBuilder();
-		for(String name : subsystems.keySet()) {
-			TestableSubsystem ss = subsystems.get(name);
-			ss.stopMoving();
-			boolean success = ss.getValues().equals(initialValues.get(name));
-			msg.append("The subsystem " + name + " is " + (success ? "" : "not ") + "working\n");
-		}
-		SmartDashboard.putString("Check", msg.toString());
-		isFinished = true;
 	}
 
 	@Override
 	public boolean isFinished(){
-		return isFinished;
+		return Timer.getFPGATimestamp() < initialTime + constants.SECONDS_TO_WAIT;
 	}
 
 	@Override
 	public void end(boolean interrupted) {
-
+		StringBuilder msg = new StringBuilder();
+		for(String name : subsystems.keySet()) {
+			TestableSubsystem ss = subsystems.get(name);
+			ss.stopMoving();
+			double[] values = ss.getValues();
+			boolean success = true;
+			for (int i = 0; i < values.length; i++) {
+				if(values[i] == initialValues.get(name)[i])
+					success = false;
+			}
+			msg.append("The subsystem " + name + " is " + (success ? "" : "not ") + "working\n");
+		}
+		SmartDashboard.putString("Check", msg.toString());
 	}
 
 }
