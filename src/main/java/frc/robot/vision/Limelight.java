@@ -74,9 +74,9 @@ public class Limelight {
      */
     // TODO: set real function
     public double getDistanceFromLimelight() {
-        double x = getTy();
-        return constants.limelightConstants.DISTANCE_CALCULATION_A_COEFFICIENT * Math.pow(x, 2)
-                + constants.limelightConstants.DISTANCE_CALCULATION_B_COEFFICIENT * x
+        double y = getTy();
+        return constants.limelightConstants.DISTANCE_CALCULATION_A_COEFFICIENT * Math.pow(y, 2)
+                + constants.limelightConstants.DISTANCE_CALCULATION_B_COEFFICIENT * y
                 + constants.limelightConstants.DISTANCE_CALCULATION_C_COEFFICIENT;
     }
 
