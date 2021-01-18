@@ -25,7 +25,7 @@ public class RobotContainer {
 
     }
 
-    public void update() {
+    public void updateDashboard() {
         dashboardController.update();
     }
 }
