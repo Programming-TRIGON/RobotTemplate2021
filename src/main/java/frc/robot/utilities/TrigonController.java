@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Notifier;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.utilities.OIMap.Axis;
-import edu.wpi.first.wpilibj.XboxController;
 
 public class TrigonController extends GenericHID {
     private static final double kIntermittentRumbleTime = 0.15;
