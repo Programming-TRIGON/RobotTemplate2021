@@ -18,6 +18,7 @@ public class RobotA extends RobotConstants {
         limelightConstants.LIMELIGHT_OFFSET_Y = 1;
         limelightConstants.DEFAULT_TABLE_KEY = "limelight";
 
+        // Sensor check constants
         testerConstants.MOVE_POWER = 1;
         testerConstants.SECONDS_TO_WAIT = 3;
     }

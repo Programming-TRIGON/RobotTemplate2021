@@ -21,7 +21,7 @@ public class TesterCommand extends CommandBase {
 		initialValues = new HashMap<>();
 	}
 
-	public TesterCommand addSS(TestableSubsystem ss, String name){
+	public TesterCommand addSubsystem(TestableSubsystem ss, String name){
 		subsystems.put(name, ss);
 		addRequirements(ss);
 		return this;

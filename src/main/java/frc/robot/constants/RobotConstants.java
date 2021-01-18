@@ -18,8 +18,8 @@ public abstract class RobotConstants extends RobotMap {
     }
 
     public class TesterConstants{
-        public int SECONDS_TO_WAIT = 2;
-        public double MOVE_POWER = 1;
+        public int SECONDS_TO_WAIT;
+        public double MOVE_POWER;
     }
 
 }
