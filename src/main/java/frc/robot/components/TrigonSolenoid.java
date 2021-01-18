@@ -17,11 +17,10 @@ public class TrigonSolenoid extends DoubleSolenoid {
      * @param state true=forward false=reverse
      */
     public void setSolenoid(boolean state) {
-        if (state) {
+        if (state)
             set(Value.kForward);
-        } else {
+        else
             set(Value.kReverse);
-        }
     }
 
     public boolean isOn() {
