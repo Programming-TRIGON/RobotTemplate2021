@@ -3,6 +3,8 @@ package frc.robot.utilities;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Notifier;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.utilities.OIMap.Axis;
+import edu.wpi.first.wpilibj.XboxController;
 
 public class TrigonController extends GenericHID {
     private static final double kIntermittentRumbleTime = 0.15;
@@ -29,24 +31,24 @@ public class TrigonController extends GenericHID {
 
     public TrigonController(int port) {
         super(port);
-        right1 = new JoystickButton(this, OIMap.right1.getPort());
-        right2 = new JoystickButton(this, OIMap.right2.getPort());
-        right3 = new JoystickButton(this, OIMap.right3.getPort());
-        left1 = new JoystickButton(this, OIMap.left1.getPort());
-        left2 = new JoystickButton(this, OIMap.left2.getPort());
-        left3 = new JoystickButton(this, OIMap.left3.getPort());
-        xButton = new JoystickButton(this, OIMap.xButton.getPort());
-        squareButton = new JoystickButton(this, OIMap.squareButton.getPort());
-        triangleButton = new JoystickButton(this, OIMap.triangleButton.getPort());
-        circleButton = new JoystickButton(this, OIMap.circleButton.getPort());
-        dPadUpButton = new JoystickButton(this, OIMap.dPadUpButton.getPort());
-        dPadRightButton = new JoystickButton(this, OIMap.dPadRightButton.getPort());
-        dPadDownButton = new JoystickButton(this, OIMap.dPadDownButton.getPort());
-        dPadLeftButton = new JoystickButton(this, OIMap.dPadLeftButton.getPort());
-        touchPad = new JoystickButton(this, OIMap.touchPad.getPort());
-        selectButton = new JoystickButton(this, OIMap.selectButton.getPort());
-        startButton = new JoystickButton(this, OIMap.startButton.getPort());
-        playStationButton = new JoystickButton(this, OIMap.playStationButton.getPort());
+        right1 = new JoystickButton(this, OIMap.Button.right1.getPort());
+        right2 = new JoystickButton(this, OIMap.Button.right2.getPort());
+        right3 = new JoystickButton(this, OIMap.Button.right3.getPort());
+        left1 = new JoystickButton(this, OIMap.Button.left1.getPort());
+        left2 = new JoystickButton(this, OIMap.Button.left2.getPort());
+        left3 = new JoystickButton(this, OIMap.Button.left3.getPort());
+        xButton = new JoystickButton(this, OIMap.Button.xButton.getPort());
+        squareButton = new JoystickButton(this, OIMap.Button.squareButton.getPort());
+        triangleButton = new JoystickButton(this, OIMap.Button.triangleButton.getPort());
+        circleButton = new JoystickButton(this, OIMap.Button.circleButton.getPort());
+        dPadUpButton = new JoystickButton(this, OIMap.Button.dPadUpButton.getPort());
+        dPadRightButton = new JoystickButton(this, OIMap.Button.dPadRightButton.getPort());
+        dPadDownButton = new JoystickButton(this, OIMap.Button.dPadDownButton.getPort());
+        dPadLeftButton = new JoystickButton(this, OIMap.Button.dPadLeftButton.getPort());
+        touchPad = new JoystickButton(this, OIMap.Button.touchPad.getPort());
+        selectButton = new JoystickButton(this, OIMap.Button.selectButton.getPort());
+        startButton = new JoystickButton(this, OIMap.Button.startButton.getPort());
+        playStationButton = new JoystickButton(this, OIMap.Button.playStationButton.getPort());
         rumbleAmount = -1;
         notifier = new Notifier(this::notifierPeriodic);
     }
@@ -143,14 +145,38 @@ public class TrigonController extends GenericHID {
         notifier.startPeriodic(kIntermittentRumbleTime);
     }
 
+    /**
+     * Get the X axis value of the controller.
+     *
+     * @param hand Side of controller whose value should be returned.
+     * @return The X axis value of the controller.
+     */
     @Override
     public double getX(Hand hand) {
-        return super.getX();
+        if (hand.equals(Hand.kLeft)) {
+            return getRawAxis(Axis.leftX.getAxis());
+        } else {
+            return getRawAxis(Axis.rightX.getAxis());
+        }
     }
 
+    /**
+     * Get the Y axis value of the controller.
+     *
+     * @param hand Side of controller whose value should be returned.
+     * @return The Y axis value of the controller.
+     */
     @Override
     public double getY(Hand hand) {
-        return super.getY();
+        if (hand.equals(Hand.kLeft)) {
+            return getRawAxis(Axis.leftY.getAxis());
+        } else {
+            return getRawAxis(Axis.rightY.getAxis());
+        }
+    }
+
+    public double deltaTriggers() {
+        return getRawAxis(Axis.rightTrigger.getAxis()) - getRawAxis(Axis.leftTrigger.getAxis());
     }
 
     public void notifierPeriodic() {
