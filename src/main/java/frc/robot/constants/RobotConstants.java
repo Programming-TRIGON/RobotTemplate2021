@@ -25,6 +25,7 @@ public abstract class RobotConstants extends RobotMap {
     public class TesterConstants {
         public int SECONDS_TO_WAIT;
         public double MOVE_POWER;
+        public int LED_BLINK_AMOUNT;
     }
 
     public class VisionConstants {

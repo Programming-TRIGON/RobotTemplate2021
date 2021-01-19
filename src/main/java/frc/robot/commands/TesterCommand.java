@@ -17,7 +17,6 @@ public class TesterCommand extends CommandBase {
 	private double initialTime;
 	private RobotConstants.TesterConstants constants;
 	private LED led;
-	private static final int BLINK_AMOUNT = 10;
 
 	public TesterCommand(RobotConstants.TesterConstants constants, LED led) {
 		addRequirements(led);
@@ -69,6 +68,6 @@ public class TesterCommand extends CommandBase {
 			if (success)
 				DriverStationLogger.logToDS(name + " is working");
 		}
-		led.blinkColor(allSuccess ? LEDColor.Green : LEDColor.Red, BLINK_AMOUNT);
+		led.blinkColor(allSuccess ? LEDColor.Green : LEDColor.Red, constants.LED_BLINK_AMOUNT);
 	}
 }
