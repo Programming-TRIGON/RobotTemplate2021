@@ -20,6 +20,7 @@ public class TesterCommand extends CommandBase {
 
 	public TesterCommand(RobotConstants.TesterConstants constants, LED led) {
 		addRequirements(led);
+		this.led = led;
 		subsystems = new HashMap<>();
 		initialValues = new HashMap<>();
 	}
