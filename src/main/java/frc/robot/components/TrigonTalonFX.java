@@ -33,6 +33,5 @@ public class TrigonTalonFX extends WPI_TalonFX {
      */
     public TrigonTalonFX(int id) {
         this(id, new MotorConfig());
-
     }
 }
