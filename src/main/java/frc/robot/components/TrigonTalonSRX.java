@@ -25,4 +25,14 @@ public class TrigonTalonSRX extends WPI_TalonSRX {
         enableVoltageCompensation(motorConfig.getVoltageCompSaturation() > 0);
         configSupplyCurrentLimit(motorConfig.getSupplyCurrentLimitConfiguration());
     }
+
+    /**
+     * constructs a new motor controller with a default configuration
+     * 
+     * @param id device ID of motor controller
+     */
+    public TrigonTalonSRX(int id) {
+        this(id, new MotorConfig());
+
+    }
 }

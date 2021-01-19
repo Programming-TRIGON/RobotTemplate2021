@@ -25,4 +25,14 @@ public class TrigonTalonFX extends WPI_TalonFX {
         enableVoltageCompensation(motorConfig.getVoltageCompSaturation() > 0);
         configSupplyCurrentLimit(motorConfig.getSupplyCurrentLimitConfiguration());
     }
+
+    /**
+     * constructs a new motor controller with a default configuration
+     * 
+     * @param id device ID of motor controller
+     */
+    public TrigonTalonFX(int id) {
+        this(id, new MotorConfig());
+
+    }
 }
