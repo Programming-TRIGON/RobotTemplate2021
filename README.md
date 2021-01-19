@@ -36,10 +36,6 @@ The code is written in Java and is based of WPILib Java control system.
 
     Contains code for sensors and solenoids used by the robot. 
 
-- [`frc.robot.motion_profiling`](src/main/java/frc/robot/motion_profiling)
-
-    Contains all motion profiling code used for autonomous driving. Trapezoidal motion profiles are used for smooth acceleration and minimal slip using ramsete controllers.
-
 - [`frc.robot.util`](src/main/java/frc/robot/utils)
 
     Contains a collection of assorted utilities classes used in the robot code. Check each file for more information.
