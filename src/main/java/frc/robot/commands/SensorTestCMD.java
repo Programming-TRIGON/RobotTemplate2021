@@ -10,7 +10,7 @@ import frc.robot.utilities.DriverStationLogger;
 
 import java.util.HashMap;
 
-public class SensorCheckCMD extends CommandBase {
+public class SensorTestCMD extends CommandBase {
 
 	private HashMap<String, TestableSubsystem> subsystems;
 	private HashMap<String, double[]> initialValues;
@@ -18,14 +18,14 @@ public class SensorCheckCMD extends CommandBase {
 	private RobotConstants.TesterConstants constants;
 	private LED led;
 
-	public SensorCheckCMD(RobotConstants.TesterConstants constants, LED led) {
+	public SensorTestCMD(RobotConstants.TesterConstants constants, LED led) {
 		addRequirements(led);
 		this.led = led;
 		subsystems = new HashMap<>();
 		initialValues = new HashMap<>();
 	}
 
-	public SensorCheckCMD addSubsystem(TestableSubsystem ss, String name) {
+	public SensorTestCMD addSubsystem(TestableSubsystem ss, String name) {
 		subsystems.put(name, ss);
 		addRequirements(ss);
 		return this;

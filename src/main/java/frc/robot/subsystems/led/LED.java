@@ -22,8 +22,8 @@ public class LED extends SubsystemBase {
    * Creates a new LED subsystem for Rev robotics Led controller and color
    * changing.
    */
-  public LED(RobotConstants constants) {
-    ledController = new Spark(constants.pwm.LED_CONTROLLER);
+  public LED(RobotConstants.PWM.LED ledMap) {
+    ledController = new Spark(ledMap.LED_CONTROLLER);
     currentColor = LEDColor.Off;
     blinkingAmount = -1;
     notifier = new Notifier(this::notifierPeriodic);

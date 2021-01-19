@@ -6,8 +6,8 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  * This class attaches booleans values to the enum values from WPILib's double
  * solenoid class
  */
-public class TrigonSolenoid extends DoubleSolenoid {
-    public TrigonSolenoid(int forwardChannel, int reverseChannel) {
+public class TrigonDoubleSolenoid extends DoubleSolenoid {
+    public TrigonDoubleSolenoid(int forwardChannel, int reverseChannel) {
         super(forwardChannel, reverseChannel);
     }
 
