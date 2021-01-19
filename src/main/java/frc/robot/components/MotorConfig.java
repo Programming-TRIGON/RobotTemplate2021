@@ -13,7 +13,7 @@ public class MotorConfig {
     private boolean isSensorInverted;
     private NeutralMode neutralMode;
     private double voltageCompSaturation;
-    private SupplyCurrentLimitConfiguration supplyCurrentLimitConfiguration;
+    private SupplyCurrentLimitConfiguration currentLimitConfig;
 
     /**
      * This constructor uses default values for all settings disables rampRate,
@@ -168,7 +168,7 @@ public class MotorConfig {
         this.isInverted = isInverted;
         this.isSensorInverted = isSensorInverted;
         this.voltageCompSaturation = voltageCompSaturation;
-        this.supplyCurrentLimitConfiguration = supplyCurrentLimitConfiguration;
+        this.currentLimitConfig = supplyCurrentLimitConfiguration;
     }
 
     public double getRampRate() {
@@ -188,7 +188,7 @@ public class MotorConfig {
     }
 
     public SupplyCurrentLimitConfiguration getSupplyCurrentLimitConfiguration() {
-        return this.supplyCurrentLimitConfiguration;
+        return this.currentLimitConfig;
     }
 
     public double getVoltageCompSaturation() {
