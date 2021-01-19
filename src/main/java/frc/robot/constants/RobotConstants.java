@@ -22,11 +22,12 @@ public abstract class RobotConstants extends RobotMap {
         public String DEFAULT_TABLE_KEY;
     }
 
-    public class TesterConstants{
+    public class TesterConstants {
         public int SECONDS_TO_WAIT;
         public double MOVE_POWER;
+    }
 
-    public static class VisionConstants {
+    public class VisionConstants {
         public PIDCoefs ROTATION_SETTINGS;
         public double TARGET_TIME_OUT;
 
